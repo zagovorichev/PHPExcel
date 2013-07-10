@@ -1,4 +1,4 @@
-PHPExcel for Kohanaframework
+﻿PHPExcel for Kohanaframework
 ========
 
 PHPExcel - OpenXML - Read, Write and Create Excel documents in PHP - Spreadsheet engine.
@@ -6,6 +6,7 @@ PHPExcel - OpenXML - Read, Write and Create Excel documents in PHP - Spreadsheet
 Include module:
 1. Add to bootstrap.php:
 
+```php
 Kohana::modules(
     array(
         ...
@@ -14,6 +15,7 @@ Kohana::modules(
         ...
     )
 );
+```
 
 2. Load new version of PHPExcel from http://phpexcel.codeplex.com/
 
@@ -21,6 +23,7 @@ How use:
 
 1. Without pages in xls document:
 
+```php
 $data = array(
     array(
         1 => // строка
@@ -35,9 +38,11 @@ $data = array(
 $XLSX = new Spreadsheet();
 $XLSX->setData( $data );
 $XLSX->load(array('name' => 'Excel_FileName')));
+```
 
 2. Has many pages:
 
+```php
 $data = array(
     'page1' => array(
         1 => // строка
@@ -156,3 +161,4 @@ $XLSX->setData( $pages, true, $styles, $merging, true
     /** auto width of ceil */ );
  
 $XLSX->load(array('name' => $title));
+```
